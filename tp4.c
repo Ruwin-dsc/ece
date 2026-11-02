@@ -7,9 +7,6 @@ int main() {
     float piece;
     float monnaie;
 
-    printf("===== HORODATEUR =====\n");
-
-    // Choix du véhicule
     printf("Choisir le véhicule :\n");
     printf("1 - Voiture\n");
     printf("2 - Moto\n");
@@ -24,18 +21,15 @@ int main() {
         return 0;
     }
 
-    // Saisie de la durée
     do {
         printf("Durée de stationnement (1 à 12 heures) : ");
         scanf("%d", &duree);
     } while (duree < 1 || duree > 12);
 
-    // Calcul du prix
     prix = tarif * duree;
 
     printf("\nMontant à payer : %.2f €\n", prix);
-
-    // Paiement
+    
     while (montantVerse < prix) {
         printf("Introduire une pièce (€) : ");
         scanf("%f", &piece);
@@ -50,23 +44,18 @@ int main() {
             printf("Pièce non acceptée !\n");
         }
     }
-
-    // Rendu monnaie
     monnaie = montantVerse - prix;
 
-    printf("\n===== TICKET =====\n");
 
     if (type == 1)
         printf("Véhicule : Voiture\n");
     else
         printf("Véhicule : Moto\n");
 
-    printf("Durée : %d heure(s)\n", duree);
-    printf("Prix : %.2f €\n", prix);
-    printf("Montant versé : %.2f €\n", montantVerse);
-    printf("Monnaie rendue : %.2f €\n", monnaie);
-
-    printf("\nMerci, bon stationnement !\n");
+    printf("Durée : %d heures\n", duree);
+    printf("Prix : %.2f euros\n", prix);
+    printf("Montant versé : %.2f euros\n", montantVerse);
+    printf("Monnaie rendue : %.2f euros\n", monnaie);
 
     return 0;
 }
